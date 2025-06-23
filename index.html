@@ -36,7 +36,7 @@
       position: fixed;
       bottom: 0;
       left: 0;
-      width: 100%;
+      width: %;
       border-radius: 0;
       margin: 0;
       display: none;
@@ -52,7 +52,7 @@
       box-shadow: 0 0 10px rgba(40, 167, 69, 0.7);
     }
     .adc-carrinho {
-      width: 100%;
+      width: %;
       padding: 15px;
       border: none;
       border-radius: 8px;
@@ -292,27 +292,27 @@
       </button>
 
       <!-- Cota 70 - 50% OFF -->
-      <button type="button" class="cota" onclick="selecionarValor(70)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
+      <button type="button" class="cota" onclick="selecionarValor(120)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
         <div style="position: absolute; top: 4px; left: 4px; background: red; color: white; font-size: 10px; padding: 2px 4px; border-radius: 4px;">50% OFF</div>
-        <div class="cota-qtd" style="font-weight: bold;">+70</div>
+        <div class="cota-qtd" style="font-weight: bold;">+120</div>
         <div style="color: #00ff66; font-size: 12px;">100 grátis</div>
         <div style="text-decoration: line-through; font-size: 12px;">R$69,30</div>
         <div style="font-weight: bold; font-size: 16px; color: #00ff66;">R$34,65</div>
       </button>
 
       <!-- Cota 100 - 50% OFF -->
-      <button type="button" class="cota" onclick="selecionarValor(100)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
+      <button type="button" class="cota" onclick="selecionarValor(200)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
         <div style="position: absolute; top: 4px; left: 4px; background: red; color: white; font-size: 10px; padding: 2px 4px; border-radius: 4px;">50% OFF</div>
-        <div class="cota-qtd" style="font-weight: bold;">+100</div>
+        <div class="cota-qtd" style="font-weight: bold;">+200</div>
         <div style="color: #00ff66; font-size: 12px;">100 grátis</div>
         <div style="text-decoration: line-through; font-size: 12px;">R$99,00</div>
         <div style="font-weight: bold; font-size: 16px; color: #00ff66;">R$49,50</div>
       </button>
 
       <!-- Cota 200 - 50% OFF -->
-      <button type="button" class="cota" onclick="selecionarValor(200)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
+      <button type="button" class="cota" onclick="selecionarValor(500)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
         <div style="position: absolute; top: 4px; left: 4px; background: red; color: white; font-size: 10px; padding: 2px 4px; border-radius: 4px;">50% OFF</div>
-        <div class="cota-qtd" style="font-weight: bold;">+200</div>
+        <div class="cota-qtd" style="font-weight: bold;">+500</div>
         <div style="color: #00ff66; font-size: 12px;">100 grátis</div>
         <div style="text-decoration: line-through; font-size: 12px;">R$199,00</div>
         <div style="font-weight: bold; font-size: 16px; color: #00ff66;">R$99,50</div>
@@ -465,9 +465,9 @@
     if (valor === 20) return 14.85;
     if (valor === 30) return 14.85;
     if (valor === 40) return 19.80;
-    if (valor === 70) return 34.65;
-    if (valor === 100) return 49.50;
-    if (valor === 200) return 99.50;
+    if (valor === 120) return 34.65;
+    if (valor === 200) return 49.50;
+    if (valor === 500) return 99.50;
     return 0;
   }
 
@@ -498,13 +498,13 @@
           case 40:
             link = "https://pay.opa-bele-za.space/checkout/e35d598f-da22-4ebb-875d-d7e71e3a58a3";
             break;
-          case 70:
+          case 120:
             link = "https://pay.opa-bele-za.space/checkout/b001d12d-8e58-42d5-bfd6-415bd530436d";
             break;
-          case 100:
+          case 200:
             link = "https://pay.opa-bele-za.space/checkout/86c0cc48-a26c-4728-aeb2-8fc0bec9c1ea";
             break;
-          case 200:
+          case 500:
             link = "https://pay.opa-bele-za.space/checkout/1c9275f2-3689-4de5-ae22-77e68a2654f5";
             break;
         }
@@ -535,7 +535,7 @@
   function incrementar() {
     const input = document.getElementById('numero');
     let valor = parseInt(input.value);
-    const valores = [20, 30, 40, 70, 100, 200];
+    const valores = [20, 30, 40, 120, 200, 500];
     const proximo = valores.find(v => v > valor) || 200;
     input.value = proximo;
     highlightButton();
@@ -544,7 +544,7 @@
   function decrementar() {
     const input = document.getElementById('numero');
     let valor = parseInt(input.value);
-    const valores = [20, 30, 40, 70, 100, 200];
+    const valores = [20, 30, 40, 120, 200, 500];
     const anterior = [...valores].reverse().find(v => v < valor) || 20;
     input.value = anterior;
     highlightButton();
